@@ -267,6 +267,8 @@
     </p>
   </body>
   <script>
+    const stage = "teaser";
+
     const teaserIcon = document.querySelector(".teaser-icon");
     const previewIcon = document.querySelector(".preview-icon");
     const launchIcon = document.querySelector(".launch-icon");
@@ -275,8 +277,24 @@
     const previewP = document.querySelector(".preview p");
     const launchP = document.querySelector(".launch p");
 
+    if (stage === "teaser") {
+      doTeaser();
+    } else if (stage === "preview") {
+      doPreview();
+    } else if (stage === "launch") {
+      doLaunch();
+    }
+
     const launch = document.querySelector(".launch");
-    launch.addEventListener("click", () => {
+    launch.addEventListener("click", () => doLaunch());
+
+    const preview = document.querySelector(".preview");
+    preview.addEventListener("click", () => doPreview());
+
+    const teaser = document.querySelector(".teaser");
+    teaser.addEventListener("click", () => doTeaser());
+
+    function doLaunch() {
       teaserIcon.classList.remove("active-icon");
       previewIcon.classList.remove("active-icon");
       launchIcon.classList.add("active-icon");
@@ -294,10 +312,9 @@
           </p>
         </div>
       `;
-    });
+    }
 
-    const preview = document.querySelector(".preview");
-    preview.addEventListener("click", () => {
+    function doPreview() {
       teaserIcon.classList.remove("active-icon");
       previewIcon.classList.add("active-icon");
       launchIcon.classList.remove("active-icon");
@@ -315,10 +332,9 @@
           </p>
         </div>
       `;
-    });
+    }
 
-    const teaser = document.querySelector(".teaser");
-    teaser.addEventListener("click", () => {
+    function doTeaser() {
       teaserIcon.classList.add("active-icon");
       previewIcon.classList.remove("active-icon");
       launchIcon.classList.remove("active-icon");
@@ -337,6 +353,6 @@
           <img src="pic.png" alt="new product launch" />
         </div>
       `;
-    });
+    }
   </script>
 </html>
