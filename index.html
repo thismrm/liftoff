@@ -232,13 +232,15 @@
         <p>Launch</p>
       </div>
     </div>
-    <div class="card-container">
-      <p>
-        Next month we’ll solve another problem. About the best way to launch
-        product.
-      </p>
-      <img src="pic.png" alt="new product launch" />
-    </div>
+    <main>
+      <div class="card-container">
+        <p>
+          Next month we’ll solve another problem. About the best way to launch
+          product.
+        </p>
+        <img src="pic.png" alt="new product launch" />
+      </div>
+    </main>
     <div class="email-container">
       <p>Stay <strong>notified</strong> for the next update</p>
       <input
@@ -255,85 +257,75 @@
     </p>
   </body>
   <script>
+    const teaserIcon = document.querySelector(".teaser-icon");
+    const previewIcon = document.querySelector(".preview-icon");
+    const launchIcon = document.querySelector(".launch-icon");
+
+    const teaserP = document.querySelector(".teaser p");
+    const previewP = document.querySelector(".preview p");
+    const launchP = document.querySelector(".launch p");
+
     const launch = document.querySelector(".launch");
     launch.addEventListener("click", () => {
-      document.body.innerHTML = `
-        <h1>Liftoff</h1>
-        <div class="stage">
-          <div class="teaser">
-            <div class="teaser-icon">👋</div>
-            <p>Teaser</p>
-          </div>
-          <div class="preview">
-            <div class="preview-icon">🎏</div>
-            <p>Preview</p>
-          </div>
-          <div class="launch">
-            <div class="launch-icon active-icon">🚀</div>
-            <p class="active-text">Launch</p>
-          </div>
-        </div>
+      teaserIcon.classList.remove("active-icon");
+      previewIcon.classList.remove("active-icon");
+      launchIcon.classList.add("active-icon");
+
+      teaserP.classList.remove("active-text");
+      previewP.classList.remove("active-text");
+      launchP.classList.add("active-text");
+
+      const main = document.querySelector("main");
+      main.innerHTML = `
         <div class="unavailable-container">
           <h2>The launch isn’t available, yet</h2>
           <p>
             Save the date at 28 Feb. We’ll have special announceent about it.
           </p>
         </div>
-        <div class="email-container">
-          <p>Stay <strong>notified</strong> for the next update</p>
-          <input
-            type="emai"
-            name="email"
-            id="email"
-            placeholder="Enter your email"
-          />
-          <button>Subscribe</button>
-        </div>
-        <p class="note">
-          Check out my twitter <strong><u>@selamatpagiamir</u></strong> for
-          daily leaks about the product
-        </p>
       `;
     });
 
     const preview = document.querySelector(".preview");
     preview.addEventListener("click", () => {
-      document.body.innerHTML = `
-        <h1>Liftoff</h1>
-        <div class="stage">
-          <div class="teaser">
-            <div class="teaser-icon">👋</div>
-            <p>Teaser</p>
-          </div>
-          <div class="preview">
-            <div class="preview-icon active-icon">🎏</div>
-            <p class="active-text">Preview</p>
-          </div>
-          <div class="launch">
-            <div class="launch-icon">🚀</div>
-            <p>Launch</p>
-          </div>
-        </div>
+      teaserIcon.classList.remove("active-icon");
+      previewIcon.classList.add("active-icon");
+      launchIcon.classList.remove("active-icon");
+
+      teaserP.classList.remove("active-text");
+      previewP.classList.add("active-text");
+      launchP.classList.remove("active-text");
+
+      const main = document.querySelector("main");
+      main.innerHTML = `
         <div class="unavailable-container">
           <h2>The preview isn’t available, yet</h2>
           <p>
             Save the date at 28 Feb. We’ll have special announceent about it.
           </p>
         </div>
-        <div class="email-container">
-          <p>Stay <strong>notified</strong> for the next update</p>
-          <input
-            type="emai"
-            name="email"
-            id="email"
-            placeholder="Enter your email"
-          />
-          <button>Subscribe</button>
+      `;
+    });
+
+    const teaser = document.querySelector(".teaser");
+    teaser.addEventListener("click", () => {
+      teaserIcon.classList.add("active-icon");
+      previewIcon.classList.remove("active-icon");
+      launchIcon.classList.remove("active-icon");
+
+      teaserP.classList.add("active-text");
+      previewP.classList.remove("active-text");
+      launchP.classList.remove("active-text");
+
+      const main = document.querySelector("main");
+      main.innerHTML = `
+        <div class="card-container">
+          <p>
+            Next month we’ll solve another problem. About the best way to launch
+            product.
+          </p>
+          <img src="pic.png" alt="new product launch" />
         </div>
-        <p class="note">
-          Check out my twitter <strong><u>@selamatpagiamir</u></strong> for
-          daily leaks about the product
-        </p>
       `;
     });
   </script>
