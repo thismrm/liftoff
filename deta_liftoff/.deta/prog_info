@@ -1,0 +1,1 @@
+{"id":"ec8fdb3d-614f-4f25-a802-1605168273ff","space":11287,"runtime":"nodejs14.x","name":"deta_liftoff","path":"oidham","project":"c0vfhq96","account":"144798365827","region":"ap-southeast-1","deps":["ejs@^3.1.6","express@^4.17.3","deta@^1.1.0","dotenv@^16.0.0"],"envs":["PROJECT_KEY","PROJECT_DB"],"public":true,"log_level":"debug","cron":""}

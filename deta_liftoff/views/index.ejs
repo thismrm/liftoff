@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
+    />
+
+    <!-- favicon -->
+    <title>Liftoff | DIY Launch page</title>
+    <!-- 
+
+
+
+      Need help? Contant me at twitter @selamatpagiamir
+
+
+
+     -->
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #0a0a0a;
+    }
+
+    h1 {
+      font-weight: bold;
+      font-size: 32px;
+      color: #dbdbdb;
+      margin: 24px 0 0 22px;
+    }
+
+    a {
+      color: white;
+    }
+
+    .stage {
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      margin-top: 44px;
+    }
+
+    .teaser-icon,
+    .preview-icon,
+    .launch-icon {
+      height: 52px;
+      width: 52px;
+      font-size: 24px;
+      line-height: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      padding: 14px;
+      background-color: #1d1d1d;
+    }
+
+    .teaser p,
+    .preview p,
+    .launch p {
+      color: white;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .teaser,
+    .preview,
+    .launch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .preview-icon,
+    .preview p,
+    .launch-icon,
+    .launch p,
+    .teaser-icon,
+    .teaser p {
+      opacity: 0.3;
+    }
+
+    .active-icon {
+      opacity: 1;
+      border: 3px solid #dbdbdb;
+    }
+
+    p.active-text {
+      opacity: 1;
+    }
+
+    /* card container */
+    .card-container {
+      border-radius: 4px;
+      background-color: #242424;
+      color: white;
+      line-height: 1.5;
+      margin: 44px 22px 0 22px;
+      padding: 10px 16px 0px 16px;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+      margin-top: 10px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* email container */
+    .email-container {
+      border-radius: 4px;
+      background-color: #242424;
+      color: white;
+      line-height: 1.5;
+      margin: 22px 22px 0 22px;
+      padding: 20px 30px 16px 30px;
+    }
+
+    .email-container p {
+      line-height: 1.5;
+      color: white;
+    }
+
+    #email {
+      color: white;
+      font-family: "Segoe UI", sans-serif;
+      font-size: 16px;
+      margin-top: 10px;
+      line-height: 1.5;
+      width: 100%;
+      background-color: #363636;
+      border: 1px solid white;
+      padding: 8px 16px;
+      border-radius: 6px;
+    }
+
+    button {
+      font-family: "Segoe UI", sans-serif;
+      font-size: 16px;
+      border: none;
+      display: block;
+      width: 270px;
+      line-height: 1.5;
+      width: 100%;
+      background-color: #0a0a0a;
+      color: white;
+      padding: 8px;
+      border-radius: 6px;
+      margin-top: 24px;
+      cursor: pointer;
+    }
+
+    .note {
+      margin-left: 22px;
+      margin-left: 22px;
+      margin-top: 52px;
+      color: #b5b5b5;
+      margin-bottom: 86px;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: #dbdbdb;
+      margin-left: 40px;
+      margin-top: 60px;
+    }
+
+    .unavailable-container {
+      margin-bottom: 64px;
+    }
+
+    .unavailable-container p {
+      color: #b5b5b5;
+      margin-left: 40px;
+      line-height: 1.5;
+      margin-top: 12px;
+    }
+
+    .stage {
+      cursor: pointer;
+    }
+
+    @media (min-width: 440px) {
+      .card-container,
+      .email-container,
+      .note {
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.5;
+      }
+
+      .unavailable-container {
+        max-width: 550px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h2 {
+        margin-left: 40px;
+        margin-right: 40px;
+      }
+
+      .unavailable-container p {
+        margin-left: 40px;
+        margin-right: 40px;
+      }
+    }
+  </style>
+  <body>
+    <h1>Liftoff</h1>
+    <div class="stage">
+      <div class="teaser">
+        <div class="teaser-icon active-icon">👋</div>
+        <p class="active-text">Teaser</p>
+      </div>
+      <div class="preview">
+        <div class="preview-icon">🎏</div>
+        <p>Preview</p>
+      </div>
+      <div class="launch">
+        <div class="launch-icon">🚀</div>
+        <p>Launch</p>
+      </div>
+    </div>
+    <main>
+      <div class="card-container">
+        <p>
+          Next month we’ll solve another problem. About the best way to launch
+          product.
+        </p>
+        <img src="../pic.png" alt="new product launch" />
+      </div>
+    </main>
+    <div class="email-container">
+      <% if (email) { %>
+        <p>Thank you 🎉</p>
+      <% } else { %>
+        <p>Stay <strong>notified</strong> for the next update</p>
+        <form action="/success" method="post">
+          <input
+            type="emai"
+            name="email"
+            id="email"
+            placeholder="Enter your email"
+          />
+          <button type="submit">Subscribe</button>
+        </form>
+      <% } %>
+    </div>
+    <p class="note">
+      Check out my twitter
+      <strong
+        ><a href="https://twitter.com/selamatpagiamir"
+          >@selamatpagiamir</a
+        ></strong
+      >
+      for daily leaks about the product
+    </p>
+  </body>
+  <script>
+    const stage = "teaser";
+
+    const teaserIcon = document.querySelector(".teaser-icon");
+    const previewIcon = document.querySelector(".preview-icon");
+    const launchIcon = document.querySelector(".launch-icon");
+
+    const teaserP = document.querySelector(".teaser p");
+    const previewP = document.querySelector(".preview p");
+    const launchP = document.querySelector(".launch p");
+
+    if (stage === "teaser") {
+      doTeaser();
+    } else if (stage === "preview") {
+      doPreview();
+    } else if (stage === "launch") {
+      doLaunch();
+    }
+
+    const launch = document.querySelector(".launch");
+    launch.addEventListener("click", () => doLaunch());
+
+    const preview = document.querySelector(".preview");
+    preview.addEventListener("click", () => doPreview());
+
+    const teaser = document.querySelector(".teaser");
+    teaser.addEventListener("click", () => doTeaser());
+
+    function doLaunch() {
+      teaserIcon.classList.remove("active-icon");
+      previewIcon.classList.remove("active-icon");
+      launchIcon.classList.add("active-icon");
+
+      teaserP.classList.remove("active-text");
+      previewP.classList.remove("active-text");
+      launchP.classList.add("active-text");
+
+      const main = document.querySelector("main");
+      main.innerHTML = `
+        <div class="unavailable-container">
+          <h2>The launch isn’t available, yet</h2>
+          <p>
+            Save the date at 28 Feb. We’ll have special announceent about it.
+          </p>
+        </div>
+      `;
+    }
+
+    function doPreview() {
+      teaserIcon.classList.remove("active-icon");
+      previewIcon.classList.add("active-icon");
+      launchIcon.classList.remove("active-icon");
+
+      teaserP.classList.remove("active-text");
+      previewP.classList.add("active-text");
+      launchP.classList.remove("active-text");
+
+      const main = document.querySelector("main");
+      main.innerHTML = `
+        <div class="unavailable-container">
+          <h2>The preview isn’t available, yet</h2>
+          <p>
+            Save the date at 28 Feb. We’ll have special announceent about it.
+          </p>
+        </div>
+      `;
+    }
+
+    function doTeaser() {
+      teaserIcon.classList.add("active-icon");
+      previewIcon.classList.remove("active-icon");
+      launchIcon.classList.remove("active-icon");
+
+      teaserP.classList.add("active-text");
+      previewP.classList.remove("active-text");
+      launchP.classList.remove("active-text");
+
+      const main = document.querySelector("main");
+      main.innerHTML = `
+        <div class="card-container">
+          <p>
+            Next month we’ll solve another problem. About the best way to launch
+            product.
+          </p>
+          <img src="../pic.png" alt="new product launch" />
+        </div>
+      `;
+    }
+  </script>
+</html>
